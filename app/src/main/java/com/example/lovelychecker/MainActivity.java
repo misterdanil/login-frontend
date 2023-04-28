@@ -53,43 +53,43 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
+//        drawerLayout = findViewById(R.id.drawer_layout);
+//
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
+//        drawerLayout.addDrawerListener(toggle);
+//        toggle.syncState();
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if(savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-            navigationView.setCheckedItem(R.id.for_home);
-        }
+//        if(savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+//            navigationView.setCheckedItem(R.id.for_home);
+//        }
 
 
         View login_button_header;
-        View headerLayout = navigationView.inflateHeaderView(R.layout.nav_header);
-        login_button_header = headerLayout.findViewById(R.id.login_button_header);
+//        View headerLayout = navigationView.inflateHeaderView(R.layout.nav_header);
+//        login_button_header = headerLayout.findViewById(R.id.login_button_header);
 
-        login_button_header.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment fragment = new LoginFragment();
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace((R.id.fragment_container), fragment).commit();
+//        login_button_header.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Fragment fragment = new LoginFragment();
+//                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//                fragmentTransaction.replace((R.id.fragment_container), fragment).commit();
+//
+//            }
+//        });
 
-            }
-        });
-
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        LoginFragment loginFragment = new LoginFragment();
-//        fragmentTransaction.replace(R.id.fragment_container, loginFragment);
-//        fragmentTransaction.commit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        LoginFragment loginFragment = new LoginFragment();
+        fragmentTransaction.replace(R.id.fragment_container, loginFragment);
+        fragmentTransaction.commit();
 
 //        login_btn = loginFragment.getView().findViewById(R.id.login_button);
 //        emailTxt = loginFragment.getView().findViewById(R.id.login_email);
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
                 public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
 
                     if (response.isSuccessful()) {
-
+                        System.out.println("yes");
                     } else {
 
                     }

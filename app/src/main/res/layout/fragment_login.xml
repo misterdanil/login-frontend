@@ -6,7 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".LoginFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/page_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothampro_medium"
+            android:text="Авторизация"
+            android:textColor="#748DBB"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +42,7 @@
                 android:layout_width="300dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
-                android:src="@drawable/loginimg"
-                android:backgroundTint="@color/white"/>
+                android:src="@drawable/loginimg"/>
 
             <EditText
                 android:layout_width="300dp"
@@ -34,8 +50,9 @@
                 android:layout_gravity="center"
                 android:id="@+id/login_email"
                 android:layout_marginTop="30dp"
+                android:fontFamily="@font/gothampro"
                 android:padding="8dp"
-                android:hint="Email"
+                android:hint="Эл. почта"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
                 android:background="@drawable/edittext_bkg"/>
@@ -47,22 +64,24 @@
                 android:id="@+id/login_password"
                 android:layout_marginTop="20dp"
                 android:padding="8dp"
-                android:hint="Password"
+                android:fontFamily="@font/gothampro"
+                android:hint="Пароль"
                 android:inputType="textPassword"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:background="@drawable/edittext_bkg"/>
-
-            <Button
-                android:layout_width="300dp"
-                android:layout_height="70dp"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login_button"
+                android:layout_width="130dp"
+                android:layout_height="65dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:color="@color/lavender"
-                android:id="@+id/login_button"
-                android:textSize="18dp"
-                android:text="Login"
-                app:cornerRadius = "30dp"/>
+                android:background="@drawable/button_set"
+                android:fontFamily="@font/gothampro"
+                android:color="@color/button_enter"
+                android:text="Войти"
+                android:elevation="15dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/signupTextView"
@@ -72,7 +91,8 @@
                 android:gravity="center"
                 android:linksClickable="true"
                 android:text="@string/sign_up_link"
-                android:textColorLink="@color/lavender"
+                android:fontFamily="@font/gothampro"
+                android:textColorLink="#748DBB"
                 android:textSize="16dp" />
 
             <LinearLayout
@@ -93,7 +113,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:text="Or login with" />
+                    android:fontFamily="@font/gothampro"
+                    android:text="Или войти с" />
 
                 <View
                     android:layout_width="wrap_content"
@@ -133,9 +154,9 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:text="Google"
+                        android:fontFamily="@font/gothampro_medium"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/lavender"/>
+                        android:textColor="#748DBB"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -160,11 +181,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/gothampro_medium"
                         android:layout_weight="1"
-                        android:text="Вконтакте"
+                        android:text="ВКонтакте"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/lavender"/>
+                        android:textColor="#748DBB"/>
                 </LinearLayout>
             </LinearLayout>
 
